@@ -1,6 +1,6 @@
 import json
 
-with open(r'https://github.com/EngiBP/-15/blob/master/json_example_QAP.json', encoding='utf8') as f:
+with open(r'https://github.com/EngiBP/HW-15/blob/master/json_example_QAP.json', encoding='utf8') as f:
     templates = json.load(f)
 
 
@@ -51,7 +51,7 @@ for item in templates:
                     ErrorLog(item, itens[item], f'ожидали тип {listOfItems[item]}')
             elif listOfItems[item] == 'val':
                 if not CheckVal(items[item], ['itemBuyEvent', 'itemViewEvent']):
-                    ErrorLog(item, itens[item], f'ожидали тип itemBuyEvent bkb itemViewEvent}')
+                    ErrorLog(item, items[item], f'ожидали тип itemBuyEvent или itemViewEvent')
             else:
                 ErrorLog(item, itens[item],'неожиданное значение')
         else:
